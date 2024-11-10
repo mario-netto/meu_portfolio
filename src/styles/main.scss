@@ -23,6 +23,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    text-decoration: none;
 }
 
 body {
@@ -54,7 +55,6 @@ body {
     font-family: variables.$fontTitle;
     font-size: 18px;
     font-weight: 400;
-    text-decoration: none;
     color: variables.$textLink;
 }
 
@@ -62,6 +62,5 @@ body {
     font-family: variables.$fontTitle;
     font-size: 16px;
     font-weight: 400;
-    text-decoration: none;
     color: variables.$textLink;
 }
