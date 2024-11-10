@@ -1,24 +1,61 @@
+@use 'variables';
+
 .header {
-    display: flex;
-    justify-content: space-around;
+    // display: flex;
+    // justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 35% 65%;
+
+    &__menu {
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        padding: 1vh 0vw 0 13vw;
+        margin-top: 25vh;
+        margin-bottom: 25vh;
+        
+        &__item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            // display: flex;
+            // justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 24px;
+            width: 300px;
+        }
+            
+    }
 
     &__about {
         position: sticky;
-        left: auto;
+        // left: auto;
         top: 0%;
         bottom: 0%;
         height: 100vh;
-        padding: 20vh 10vw 20vh 0vw;
+        padding: 20vh 10vw 20vh 6vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        &__text {
+            span {
+                background: linear-gradient(214deg, #ff285c, #b010fb);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        
 
         &__links {
             display: flex;
             justify-content: flex-start;
             gap: 12px;
-            margin-top: 12px;
+            margin-top: 16px;
             
+            a:hover {
+                color: variables.$textLinkHover;
+            }
         }
     }
 }

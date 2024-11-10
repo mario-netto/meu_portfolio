@@ -1,7 +1,7 @@
 
 
 // font-family: "Oswald", sans-serif;
-// font-family: "Source Serif 4", serif;
+// font-family: "Nunito", sans-serif;
 
 @use 'variables';
 @use 'header';
@@ -39,11 +39,26 @@ body {
 
 .title {
     font-family: variables.$fontTitle;
-    font-size: 22px;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.text {
+    font-family: variables.$fontText;
+    font-weight: 600;
+    font-size: 16px;
     line-height: 22px;
 }
 
-.text--link {
+.text--gray {
+    font-family: variables.$fontTitle;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: variables.$textLink;
+}
+
+.text--gray-small {
     font-family: variables.$fontTitle;
     font-size: 16px;
     font-weight: 400;
