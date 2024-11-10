@@ -1,10 +1,24 @@
-const elemento = document.querySelector('.portfolio')
-const x = document.querySelector('.test')
+document.addEventListener('DOMContentLoaded', function(){
+    
+    showPortfolio ()
 
-elemento.addEventListener('mouseover', function() {
-    x.classList.add('test--mostra')
+    // função mostra portfolio
+    function showPortfolio () {
+        const elementButton = document.querySelector('.portfolio')
+        const elementVideo = document.querySelector('.portfolio-video')
+        elementButton.addEventListener('mouseover', function() {
+            elementVideo.classList.add('portfolio-video--mostra')
+            elementButton.addEventListener('mouseout', function() {
+                elementVideo.classList.remove('portfolio-video--mostra')
+            })
+        })
+    }
+
+    function movePortfolio () {
+        
+    }
 })
 
-elemento.addEventListener('mouseout', function() {
-    x.classList.remove('test--mostra')
-})
+
+
+

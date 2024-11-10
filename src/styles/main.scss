@@ -67,16 +67,19 @@ body {
     color: variables.$textLink;
 }
 
-.test {
-    display: none;
+.portfolio-video {
+    // display: none;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 650px;
-    height: 360px;
-    background-color: red;
+    width: 80%;
+    border-radius: 40px;
+    box-shadow: 0 0 16px 0px #000000;
+    transition: opacity .2s ease;
     
     &--mostra {
-        display: block;
+        // display: block;
+        opacity: 1;
+        pointer-events: auto;
     }
 }
