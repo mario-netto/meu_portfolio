@@ -66,3 +66,17 @@ body {
     font-weight: 400;
     color: variables.$textLink;
 }
+
+.test {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 650px;
+    height: 360px;
+    background-color: red;
+    
+    &--mostra {
+        display: block;
+    }
+}
