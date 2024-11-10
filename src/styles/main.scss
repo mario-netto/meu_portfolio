@@ -42,9 +42,11 @@ body {
     font-family: variables.$fontTitle;
     font-size: 24px;
     line-height: 30px;
+    letter-spacing: -.5px;
 }
 
 .text {
+    color: variables.$textBlack;
     font-family: variables.$fontText;
     font-weight: 600;
     font-size: 16px;
