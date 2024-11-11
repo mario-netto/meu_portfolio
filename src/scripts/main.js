@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
             const mouseX = event.pageX
             const mouseY = event.pageY
     
-        cursorFollow.style.left = `${mouseX / 60}%`
+        cursorFollow.style.left = `${mouseX / 60 - 10}%`
         cursorFollow.style.top = `${(mouseY / 60) + 10}%`
         })
     }

@@ -38,6 +38,11 @@ body {
     height: 100vh;
 }
 
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
 .title {
     font-family: variables.$fontTitle;
     font-size: 24px;
@@ -70,15 +75,17 @@ body {
 .portfolio-video {
     // display: none;
     opacity: 0;
+    display: none;
     pointer-events: none;
     position: absolute;
-    width: 80%;
+    width: 95%;
     border-radius: 40px;
-    box-shadow: 0 0 16px 0px #000000;
+    box-shadow: 0 0 16px 0px #0000005b;
     transition: opacity .2s ease;
     
     &--mostra {
         // display: block;
+        display: block;
         opacity: 1;
         pointer-events: auto;
     }
