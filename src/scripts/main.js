@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-
     showCuphead()
     showUmso()
     showAppTimer()
+    showArchanjo()
     showForm()
 
     movePortfolio()
@@ -19,6 +19,7 @@ function showCuphead () {
     
         //Mouse in
     elementButton.addEventListener('mouseover', function() {
+        startVideo(elementVideo)
         //hide about
         aboutText.classList.add('opacityNone')
         aboutLinks.classList.add('opacityNone')
@@ -46,6 +47,7 @@ function showUmso () {
     
         //Mouse in
     elementButton.addEventListener('mouseover', function() {
+        startVideo(elementVideo)
         //hide about
         aboutText.classList.add('opacityNone')
         aboutLinks.classList.add('opacityNone')
@@ -73,6 +75,35 @@ function showAppTimer () {
     
         //Mouse in
     elementButton.addEventListener('mouseover', function() {
+        startVideo(elementVideo)
+        //hide about
+        aboutText.classList.add('opacityNone')
+        aboutLinks.classList.add('opacityNone')
+        //show portfolio
+        elementVideo.classList.remove('opacityNone')
+        elementVideo.classList.add('portfolio-video--mostra')
+
+        //mouse out
+        elementButton.addEventListener('mouseout', function() {
+            //show about
+            aboutText.classList.remove('opacityNone')
+            aboutLinks.classList.remove('opacityNone')
+            //hide portfolio
+            elementVideo.classList.add('opacityNone')
+            elementVideo.classList.remove('portfolio-video--mostra')
+        })
+    })
+}
+
+function showArchanjo () {
+    const elementButton = document.querySelector('.archanjo')
+    const elementVideo = document.querySelector('.portfolio-video-archanjo')
+    const aboutText = document.querySelector('.header__about__text')
+    const aboutLinks = document.querySelector('.header__about__links')
+    
+        //Mouse in
+    elementButton.addEventListener('mouseover', function() {
+        startVideo(elementVideo)
         //hide about
         aboutText.classList.add('opacityNone')
         aboutLinks.classList.add('opacityNone')
@@ -100,6 +131,7 @@ function showForm () {
     
         //Mouse in
     elementButton.addEventListener('mouseover', function() {
+        startVideo(elementVideo)
         //hide about
         aboutText.classList.add('opacityNone')
         aboutLinks.classList.add('opacityNone')
@@ -134,3 +166,9 @@ function movePortfolio() {
     });
 }
 
+const video = document.querySelector('video');
+
+function startVideo(video) {
+    video.currentTime = 0;
+    video.play();
+}
