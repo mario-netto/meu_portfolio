@@ -2,11 +2,10 @@
 
 .header {
     display: grid;
-    // grid-template-columns: .35fr .65fr;
     grid-template-columns: 35% auto;
 
     &__menu {
-        height: 250vh; //what
+        // height: 250vh; //what
         display: flex;
         flex-direction: column;
         align-content: center;
@@ -72,9 +71,8 @@
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        // min-width: 350px;
-        // align-content: center;
 
+        //gradient about
         &__text {
             span {
                 background: linear-gradient(214deg, #3a1c71, #d76d77, #cf8e62);
