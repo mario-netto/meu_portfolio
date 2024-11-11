@@ -72,10 +72,9 @@ body {
     color: variables.$textLink;
 }
 
-.portfolio-video {
+.move {
+    // opacity: 0;
     // display: none;
-    opacity: 0;
-    display: none;
     pointer-events: none;
     position: absolute;
     width: 95%;
@@ -92,5 +91,6 @@ body {
 }
 
 .opacityNone {
+    display: none;
     opacity: 0;
 }
