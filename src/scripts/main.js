@@ -170,5 +170,5 @@ const video = document.querySelector('video');
 
 function startVideo(video) {
     video.currentTime = 0;
-    video.play();
+    // video.play();
 }
