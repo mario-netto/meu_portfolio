@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const aboutText = document.querySelector('.header__about__text')
     const aboutLinks = document.querySelector('.header__about__links')
@@ -6,48 +8,63 @@ document.addEventListener('DOMContentLoaded', function() {
     const blur = document.querySelector('.blur')
     const close = document.querySelector('.close')
 
-    if (window.innerWidth <= 767) {
-        linkPortfolio.addEventListener('click', function(e) {
-            e.preventDefault()
-        })
-        showCupheadMobile()
-    } else {
-        showCuphead()
-        showUmso()
-        showAppTimer()
-        showArchanjo()
-        showForm()
-    }
 
-    window.addEventListener('resize', function(){
-        if (window.innerWidth <= 767) {
-            linkPortfolio.addEventListener('click', function(e) {
-                e.preventDefault()
-            })
-            console.log('ok resize')
-            showCupheadMobile()
-        } else {
-            showCuphead()
-            showUmso()
-            showAppTimer()
-            showArchanjo()
-            showForm()
-        }
-    })
+    
+    
+    // window.addEventListener('resize', aplicarResponsividade);
+    // aplicarResponsividade(); // Chamada inicial ao carregar a página
+
+
+
+    // window.addEventListener('resize', function() {
+    //     if (window.innerWidth >= 767) {
+    //         showCuphead()
+    //     } else {
+    //         showCupheadMobile()
+    //     }
+    // })
+
+    showCuphead()
+    showCupheadMobile()
+    // showUmso()
+    // showAppTimer()
+    // showArchanjo()
+    // showForm()
 
 //---------------------------------------------------------------------------
-    
-    function movePortfolio() {
-        document.addEventListener('mousemove', function(e) {
-            const mouseX = e.pageX
-            const mouseY = e.pageY
 
-            videoPortfolio.forEach(function(e) {
-                e.style.left = `${mouseX / 60 - 5}%`
-                e.style.top = `${(mouseY / 60) + 10}%`
-            })
-        })
-    }
+// function aplicarResponsividade() {
+//     const largura = window.innerWidth
+
+//     if (largura < 768) {
+//         showCupheadMobile()
+//     } else if (largura < 1024) {
+//         showCuphead()
+//         console.log("Tablet")
+//     } else {
+//         // Exemplo de código para desktops
+//         console.log("Desktop")
+//     }
+// }
+
+function preventLink(e) {
+    e.preventDefault();
+}
+
+function handleMouseMove(e) {
+    const mouseX = e.pageX;
+    const mouseY = e.pageY;
+
+    videoPortfolio.forEach(function(e) {
+        e.style.left = `${mouseX / 60 - 5}%`
+        e.style.top = `${(mouseY / 60) + 10}%`
+    })
+}
+
+// Função para adicionar o evento de movimento
+// function movePortfolio() {
+//     document.addEventListener('mousemove', handleMouseMove)
+// }
 
     function startVideo(video) {
         video.currentTime = 0
@@ -57,28 +74,65 @@ document.addEventListener('DOMContentLoaded', function() {
     function showCuphead() {
         const elementButton = document.querySelector('.cuphead')
         const elementVideo = document.querySelector('.portfolio-video-cuphead')
-             //Mouse in
-        elementButton.addEventListener('mouseover', function() {
+        
+        
+            if(window.innerWidth >= 767) {
+                document.addEventListener('mousemove', handleMouseMove)
+                elementButton.addEventListener('mouseover', mouseIn)
+                elementButton.addEventListener('mouseout', mouseOut)
+            } else {
+                document.removeEventListener('mousemove', handleMouseMove)
+                elementButton.removeEventListener('mouseover', mouseIn)
+                elementButton.removeEventListener('mouseout', mouseOut)
+            }
+        
+        
+        
+        function mouseIn() {
             startVideo(elementVideo)
-            movePortfolio()
             //hide about
             aboutText.classList.add('opacity-none')
             aboutLinks.classList.add('opacity-none')
             //show portfolio
             elementVideo.classList.remove('opacity-none')
             elementVideo.classList.add('portfolio-video--show')
+        }
 
-            //mouse out
-            elementButton.addEventListener('mouseout', function() {
-                //show about
-                aboutText.classList.remove('opacity-none')
-                aboutLinks.classList.remove('opacity-none')
-                //hide portfolio
-                elementVideo.classList.add('opacity-none')
-                elementVideo.classList.remove('portfolio-video--show')
-            })
-        })
+        function mouseOut() {
+            //show about
+            aboutText.classList.remove('opacity-none')
+            aboutLinks.classList.remove('opacity-none')
+            //hide portfolio
+            elementVideo.classList.add('opacity-none')
+            elementVideo.classList.remove('portfolio-video--show')
+        }
     }
+
+    // function showCuphead() {
+    //     const elementButton = document.querySelector('.cuphead')
+    //     const elementVideo = document.querySelector('.portfolio-video-cuphead')
+    //          //Mouse in
+    //     elementButton.addEventListener('mouseover', function() {
+    //         startVideo(elementVideo)
+    //         movePortfolio()
+    //         //hide about
+    //         aboutText.classList.add('opacity-none')
+    //         aboutLinks.classList.add('opacity-none')
+    //         //show portfolio
+    //         elementVideo.classList.remove('opacity-none')
+    //         elementVideo.classList.add('portfolio-video--show')
+
+    //         //mouse out
+    //         elementButton.addEventListener('mouseout', function() {
+    //             //show about
+    //             aboutText.classList.remove('opacity-none')
+    //             aboutLinks.classList.remove('opacity-none')
+    //             //hide portfolio
+    //             elementVideo.classList.add('opacity-none')
+    //             elementVideo.classList.remove('portfolio-video--show')
+    //         })
+    //     })
+    // }
 
     function showUmso() {
         const elementButton = document.querySelector('.appTimer')
@@ -189,7 +243,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function showCupheadMobile() {
         const elementButton = document.querySelector('.cuphead');
         const elementVideo = document.querySelector('.portfolio-video-cuphead');
-        const blur = document.querySelector('.blur');
+        const blur = document.querySelector('.blur')
+
+        linkPortfolio.addEventListener('click', preventLink)
 
         elementButton.addEventListener('click', function() {
             startVideo(elementVideo)
