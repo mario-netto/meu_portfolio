@@ -8,33 +8,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const blur = document.querySelector('.blur')
     const close = document.querySelector('.close')
 
-    document.addEventListener('fullscreenchange', function () {
-        if (document.fullscreenElement) {
-            // Sai do modo tela cheia automaticamente
-            document.exitFullscreen();
-            alert("Modo tela cheia desativado para este vídeo.");
-        }
-    });
+    // document.addEventListener('fullscreenchange', function () {
+    //     if (document.fullscreenElement) {
+    //         // Sai do modo tela cheia automaticamente
+    //         document.exitFullscreen();
+    //         alert("Modo tela cheia desativado para este vídeo.");
+    //     }
+    // });
     
     // window.addEventListener('resize', aplicarResponsividade);
     // aplicarResponsividade(); // Chamada inicial ao carregar a página
 
-
-
-    // window.addEventListener('resize', function() {
-    //     if (window.innerWidth >= 767) {
-    //         showCuphead()
-    //     } else {
-    //         showCupheadMobile()
-    //     }
-    // })
-
     showCuphead()
     showCupheadMobile()
-    // showUmso()
-    // showAppTimer()
-    // showArchanjo()
-    // showForm()
+    showUmso()
+    showAppTimer()
+    showArchanjo()
+    showForm()
 
 //---------------------------------------------------------------------------
 
@@ -93,8 +83,6 @@ function handleMouseMove(e) {
                 elementButton.removeEventListener('mouseout', mouseOut)
             }
         
-        
-        
         function mouseIn() {
             startVideo(elementVideo)
             //hide about
@@ -141,13 +129,15 @@ function handleMouseMove(e) {
     //     })
     // }
 
+    
+
     function showUmso() {
-        const elementButton = document.querySelector('.appTimer')
-        const elementVideo = document.querySelector('.portfolio-video-appTimer')
+        const elementButton = document.querySelector('.umso')
+        const elementVideo = document.querySelector('.portfolio-video-umso')
         //Mouse in
         elementButton.addEventListener('mouseover', function() {
             startVideo(elementVideo)
-            movePortfolio()
+            document.addEventListener('mousemove', handleMouseMove)
             //hide about
             aboutText.classList.add('opacity-none')
             aboutLinks.classList.add('opacity-none')
@@ -168,12 +158,12 @@ function handleMouseMove(e) {
     }
 
     function showAppTimer() {
-        const elementButton = document.querySelector('.umso')
-        const elementVideo = document.querySelector('.portfolio-video-umso')
+        const elementButton = document.querySelector('.appTimer')
+        const elementVideo = document.querySelector('.portfolio-video-appTimer')
         //Mouse in
         elementButton.addEventListener('mouseover', function() {
             startVideo(elementVideo)
-            movePortfolio()
+            document.addEventListener('mousemove', handleMouseMove)
             //hide about
             aboutText.classList.add('opacity-none')
             aboutLinks.classList.add('opacity-none')
@@ -199,7 +189,7 @@ function handleMouseMove(e) {
         //Mouse in
         elementButton.addEventListener('mouseover', function() {
             startVideo(elementVideo)
-            movePortfolio()
+            document.addEventListener('mousemove', handleMouseMove)
             //hide about
             aboutText.classList.add('opacity-none')
             aboutLinks.classList.add('opacity-none')
@@ -225,7 +215,7 @@ function handleMouseMove(e) {
         //Mouse in
         elementButton.addEventListener('mouseover', function() {
             startVideo(elementVideo)
-            movePortfolio()
+            document.addEventListener('mousemove', handleMouseMove)
             //hide about
             aboutText.classList.add('opacity-none')
             aboutLinks.classList.add('opacity-none')
