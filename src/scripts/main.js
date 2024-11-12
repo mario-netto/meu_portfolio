@@ -7,11 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const close = document.querySelector('.close')
 
     if (window.innerWidth <= 767) {
-        
         linkPortfolio.addEventListener('click', function(e) {
             e.preventDefault()
         })
-
         showCupheadMobile()
     } else {
         showCuphead()
@@ -20,6 +18,22 @@ document.addEventListener('DOMContentLoaded', function() {
         showArchanjo()
         showForm()
     }
+
+    window.addEventListener('resize', function(){
+        if (window.innerWidth <= 767) {
+            linkPortfolio.addEventListener('click', function(e) {
+                e.preventDefault()
+            })
+            console.log('ok resize')
+            showCupheadMobile()
+        } else {
+            showCuphead()
+            showUmso()
+            showAppTimer()
+            showArchanjo()
+            showForm()
+        }
+    })
 
 //---------------------------------------------------------------------------
     
