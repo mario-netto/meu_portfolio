@@ -8,8 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const blur = document.querySelector('.blur')
     const close = document.querySelector('.close')
 
-
-    
+    document.addEventListener('fullscreenchange', function () {
+        if (document.fullscreenElement) {
+            // Sai do modo tela cheia automaticamente
+            document.exitFullscreen();
+            alert("Modo tela cheia desativado para este vídeo.");
+        }
+    });
     
     // window.addEventListener('resize', aplicarResponsividade);
     // aplicarResponsividade(); // Chamada inicial ao carregar a página
@@ -47,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //     }
 // }
 
+
 function preventLink(e) {
     e.preventDefault();
 }
@@ -77,6 +83,7 @@ function handleMouseMove(e) {
         
         
             if(window.innerWidth >= 767) {
+                
                 document.addEventListener('mousemove', handleMouseMove)
                 elementButton.addEventListener('mouseover', mouseIn)
                 elementButton.addEventListener('mouseout', mouseOut)
