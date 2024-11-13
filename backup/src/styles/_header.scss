@@ -1,0 +1,129 @@
+@use 'variables';
+
+.header {
+    display: grid;
+    grid-template-columns: 35% auto;
+
+    &__menu {
+        // height: 250vh; //what
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin: 26vh auto;
+        padding-left: 8vw;
+        
+        &__item {
+            display: grid;
+            grid-template-columns: 80% 10%;
+            padding: 12px 24px;
+            margin-bottom: 8px;
+            width: 300px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+
+            .text {
+                pointer-events: none; //aceitar click no js
+            }
+
+            //hover button portfolio
+            &:hover {
+                background-color: #fff;
+                border-radius: 24px;
+                box-shadow: 0 0 16px 0px #0000002a;
+                transform: scale(1.05);
+            }
+
+            &__year {
+                text-align: right;
+            }
+        }
+
+        .what {
+            span {
+                opacity: 30%;
+            }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h3 {
+                margin-top: 16px;
+                font-size: 16px;
+                opacity: 60%;
+            }
+
+            &__image {
+                margin-top: 16px;
+                margin-bottom: 8px;
+                max-width: 200px;
+                width: 100%;
+                background-image: 45;
+                border-radius: 50%;
+                // opacity: 100%;
+            }
+        }
+    }
+
+    &__about {
+        position: sticky;
+        left: auto;
+        top: 0%;
+        bottom: 0%;
+        height: 100vh;
+        padding: 20vh 10vw 20vh 6vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        //gradient about
+        &__text {
+            span {
+                background: linear-gradient(214deg, #3a1c71, #d76d77, #cf8e62);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        
+        &__links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 12px;
+            margin-top: 16px;
+            
+            a:hover {
+                color: variables.$textLinkHover;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reverse;
+        
+        &__about {
+            position: static;
+            // padding: 0;
+            height: 100%;
+        }
+
+        &__menu {
+            margin: 0;
+            padding: 0;
+
+            &__item {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 990px) {
+        
+        &__about {
+            padding-left: 12vw;
+        }
+    }
+}

@@ -1,0 +1,150 @@
+
+
+// font-family: "Oswald", sans-serif;
+// font-family: "Nunito", sans-serif;
+
+@use 'variables';
+@use 'header';
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: hsla(180, 1%, 97%, 1);
+    background-image: 
+        radial-gradient(at 81% 65%, hsla(218, 98%, 94%, 1) 0px, transparent 50%), 
+        radial-gradient(at 95% 99%, hsla(39, 95%, 94%, 1) 0px, transparent 50%), 
+        radial-gradient(at 48% 26%, hsla(271, 77%, 94%, 1) 0px, transparent 50%), 
+        radial-gradient(at 75% 26%, hsla(197, 87%, 94%, 1) 0px, transparent 50%);
+    background-size: 500% 500%;
+    animation: gradient 9s ease infinite;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: variables.$fontTitle;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -.5px;
+}
+
+.text {
+    color: variables.$textBlack;
+    font-family: variables.$fontText;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.text--gray {
+    font-family: variables.$fontTitle;
+    font-size: 18px;
+    font-weight: 400;
+    color: variables.$textLink;
+}
+
+.text--gray-small {
+    font-family: variables.$fontTitle;
+    font-size: 16px;
+    font-weight: 400;
+    color: variables.$textLink;
+}
+
+.blur {
+    display: none;
+    opacity: 0;
+    position: absolute;
+
+    &--active {
+        display: block;
+        opacity: 100;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+    }
+}
+
+//video portfolio
+.portfolio-video {
+    pointer-events: none;
+    position: absolute;
+    width: 95%;
+    border-radius: 40px;
+    box-shadow: 0 0 16px 0px #0000005b;
+    // transition: opacity .2s ease;
+    
+    &--show {
+        // display: block;
+        display: block;
+        opacity: 100;
+        pointer-events: auto;
+    }
+
+    &--show-mobile {
+        display: block;
+        opacity: 100;
+        position: fixed;
+        top: 32vh;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+}
+
+.close {
+    position: fixed;
+    top: 8;
+    right: 4;
+    z-index: 2;
+    
+    &__button {
+        background-color: #000000b7;
+        font-family: sans-serif;
+        font-size: 32px;
+        color: #fff;
+        border-radius: 50%;
+        padding: 2px 12px 5px ;
+        width: auto;
+        height: auto;
+        cursor: pointer;
+    }
+}
+
+.opacity-none {
+    display: none;
+    opacity: 0;
+}
+
+
+.disable-link {
+    pointer-events: none;
+}

@@ -27,15 +27,16 @@
 }
 
 body {
-    background-color: hsla(180, 1%, 97%, 1);
+    background-color: rgb(0, 0, 0);
     background-image: 
-        radial-gradient(at 81% 65%, hsla(218, 98%, 94%, 1) 0px, transparent 50%), 
-        radial-gradient(at 95% 99%, hsla(39, 95%, 94%, 1) 0px, transparent 50%), 
-        radial-gradient(at 48% 26%, hsla(271, 77%, 94%, 1) 0px, transparent 50%), 
-        radial-gradient(at 75% 26%, hsla(197, 87%, 94%, 1) 0px, transparent 50%);
+        radial-gradient(at 81% 65%, rgb(0, 0, 7) 0px, transparent 50%), 
+        radial-gradient(at 95% 99%, rgb(0, 7, 0) 0px, transparent 50%), 
+        radial-gradient(at 48% 26%, rgb(7, 0, 0) 0px, transparent 50%), 
+        radial-gradient(at 75% 26%, rgb(0, 7, 7) 0px, transparent 50%);
     background-size: 500% 500%;
     animation: gradient 9s ease infinite;
     height: 100vh;
+    color: hsla(0, 0%, 90%, 1); /* Para textos ficarem em tom claro */
 }
 
 .container {
@@ -97,7 +98,7 @@ body {
     position: absolute;
     width: 95%;
     border-radius: 40px;
-    box-shadow: 0 0 16px 0px #0000005b;
+    box-shadow: 0 0 16px 0px #ffffff5b;
     // transition: opacity .2s ease;
     
     &--show {
