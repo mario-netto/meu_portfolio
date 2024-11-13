@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function display(){
         if (window.innerWidth <= 767) {
-            linkPortfolio.forEach(function(e) {
-                e.addEventListener('click', preventLink)
-                console.log('block')
-            })
+            // linkPortfolio.forEach(function(e) {
+            //     e.addEventListener('click', preventLink)
+            //     console.log('block')
+            // })
 
             showCupheadMobile() 
             showUmsoMobile()
@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
             showArchanjoMobile()
             showFormMobile()           
         } else {
-            linkPortfolio.forEach(function(e) {
-                e.removeEventListener('click', preventLink)
-                console.log('resize block')
-            })
+            // linkPortfolio.forEach(function(e) {
+            //     e.removeEventListener('click', preventLink)
+            //     console.log('resize block')
+            // })
 
             showCuphead()
             showUmso()
@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.innerWidth <= 767) {
                 elementButton.removeEventListener('mouseover', mouseIn)
                 elementButton.removeEventListener('mouseout', mouseOut)
-            } else {
             }
         })
 
@@ -268,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elementButton.addEventListener('click', clickPortfolio)
 
         function clickPortfolio() {
+            console.log('click ok')
             startVideo(elementVideo)
             // Mostrar o vídeo
             elementVideo.classList.remove('opacity-none');

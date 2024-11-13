@@ -110,20 +110,18 @@ body {
     &--show-mobile {
         display: block;
         opacity: 100;
-        position: absolute;
+        position: fixed;
         top: 32vh;
         right: 0;
         bottom: 0;
         left: 0;
         width: 100%;
         z-index: 2;
-        
-        
     }
 }
 
 .close {
-    position: absolute;
+    position: fixed;
     top: 8;
     right: 4;
     z-index: 2;
