@@ -2,15 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const aboutText = document.querySelector('.header__about__text')
     const aboutLinks = document.querySelector('.header__about__links')
     const videoPortfolio = document.querySelectorAll('.portfolio-video')
-    const linkPortfolio = document.querySelector('.portfolio')
+    const linkPortfolio = document.querySelectorAll('.portfolio')
     const blur = document.querySelector('.blur')
     const close = document.querySelector('.close')
 
-    // showCuphead()
-    // showUmso()
-    // showAppTimer()
-    // showArchanjo()
-    // showForm()
+  
+
+  
 
     display()
     window.addEventListener('resize', display)
@@ -18,9 +16,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function display(){
         if (window.innerWidth <= 767) {
-            showCupheadMobile()            
+            linkPortfolio.forEach(function(e) {
+                e.addEventListener('click', preventLink)
+                console.log('block')
+            })
+            showCupheadMobile() 
+            showUmsoMobile()           
         } else {
+            linkPortfolio.forEach(function(e) {
+                e.removeEventListener('click', preventLink)
+                console.log('resize block')
+            })
             showCuphead()
+            showUmso()
+            showAppTimer()
+            showArchanjo()
+            showForm()
         }
     }
  
@@ -31,13 +42,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
+        window.addEventListener('resize', function(){
+            if (window.innerWidth <= 767) {
+                elementButton.removeEventListener('mouseover', mouseIn)
+                elementButton.removeEventListener('mouseout', mouseOut)
+            }
+        })
 
         window.addEventListener('resize', function(){
             if (window.innerWidth <= 767) {
                 elementButton.removeEventListener('mouseover', mouseIn)
                 elementButton.removeEventListener('mouseout', mouseOut)
             } else {
-                linkPortfolio.removeEventListener('click', preventLink);
             }
         })
 
@@ -68,6 +84,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
+        window.addEventListener('resize', function(){
+            if (window.innerWidth <= 767) {
+                elementButton.removeEventListener('mouseover', mouseIn)
+                elementButton.removeEventListener('mouseout', mouseOut)
+            }
+        })
 
         function mouseIn(){
             startVideo(elementVideo)
@@ -96,6 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
+        window.addEventListener('resize', function(){
+            if (window.innerWidth <= 767) {
+                elementButton.removeEventListener('mouseover', mouseIn)
+                elementButton.removeEventListener('mouseout', mouseOut)
+            }
+        })
 
         function mouseIn(){
             startVideo(elementVideo)
@@ -124,6 +152,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
+        window.addEventListener('resize', function(){
+            if (window.innerWidth <= 767) {
+                elementButton.removeEventListener('mouseover', mouseIn)
+                elementButton.removeEventListener('mouseout', mouseOut)
+            }
+        })
 
         function mouseIn(){
             startVideo(elementVideo)
@@ -152,6 +186,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
+        window.addEventListener('resize', function(){
+            if (window.innerWidth <= 767) {
+                elementButton.removeEventListener('mouseover', mouseIn)
+                elementButton.removeEventListener('mouseout', mouseOut)
+            }
+        })
 
         function mouseIn(){
             startVideo(elementVideo)
@@ -220,7 +260,41 @@ document.addEventListener('DOMContentLoaded', function() {
         const elementButton = document.querySelector('.cuphead');
         const elementVideo = document.querySelector('.portfolio-video-cuphead');
 
-        linkPortfolio.addEventListener('click', preventLink)
+        elementButton.addEventListener('click', clickPortfolio)
+
+        function clickPortfolio() {
+            startVideo(elementVideo)
+            // Mostrar o vídeo
+            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.add('portfolio-video--show-mobile')
+            close.classList.remove('opacity-none')
+            blur.classList.add('blur--active');
+            
+            document.body.style.overflow = 'hidden'
+
+            document.addEventListener('click', closeVideo)
+        }
+
+        function closeVideo(e) {
+            // Verifica se o clique foi fora do vídeo e do botão
+            if (!elementVideo.contains(e.target) && e.target !== elementButton) {
+                // close video
+                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.remove('portfolio-video--show-mobile')
+                close.classList.add('opacity-none')
+                blur.classList.remove('blur--active')
+                document.body.style.overflow = 'auto'
+
+                // Remove o evento para não ficar sendo acionado novamente
+                document.removeEventListener('click', closeVideo)
+            }
+        }
+    }   
+    
+    function showUmsoMobile() {
+        const elementButton = document.querySelector('.umso');
+        const elementVideo = document.querySelector('.portfolio-video-umso');
+
         elementButton.addEventListener('click', clickPortfolio)
 
         function clickPortfolio() {
