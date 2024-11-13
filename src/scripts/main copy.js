@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // } 
 //---------------------------------------------------------------------------
+    
     function showCuphead () {
         const elementButton = document.querySelector('.cuphead')
         const elementVideo = document.querySelector('.portfolio-video-cuphead')
@@ -178,5 +179,14 @@ document.addEventListener('DOMContentLoaded', function() {
         video.currentTime = 0
         // video.play();
     }
+
+    function preventLink(e) {
+        e.preventDefault(); // Impede o comportamento padrão do link
+        console.log("Link bloqueado");
+    }
+    
+    // // Adiciona o evento de clique ao link e chama preventLink
+    // linkPortfolio.addEventListener('click', preventLink);
+    
 
 })
