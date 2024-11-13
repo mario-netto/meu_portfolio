@@ -15,12 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     function display(){
-        if (window.innerWidth <= 767) {
+        if (window.innerWidth <= 990) {
             // linkPortfolio.forEach(function(e) {
             //     e.addEventListener('click', preventLink)
             //     console.log('block')
             // })
-
             showCupheadMobile() 
             showUmsoMobile()
             showAppTimerMobile()
@@ -39,8 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
             showForm()
         }
     }
+
  
-//---------------------------------------------------------------------------
+//-----------------------tema----------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------
+
     function showCuphead () {
         const elementButton = document.querySelector('.cuphead')
         const elementVideo = document.querySelector('.portfolio-video-cuphead')
@@ -48,14 +53,14 @@ document.addEventListener('DOMContentLoaded', function() {
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
-            if (window.innerWidth <= 767) {
+            if (window.innerWidth <= 990) {
                 elementButton.removeEventListener('mouseover', mouseIn)
                 elementButton.removeEventListener('mouseout', mouseOut)
             }
         })
 
         window.addEventListener('resize', function(){
-            if (window.innerWidth <= 767) {
+            if (window.innerWidth <= 990) {
                 elementButton.removeEventListener('mouseover', mouseIn)
                 elementButton.removeEventListener('mouseout', mouseOut)
             }
@@ -89,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
-            if (window.innerWidth <= 767) {
+            if (window.innerWidth <= 990) {
                 elementButton.removeEventListener('mouseover', mouseIn)
                 elementButton.removeEventListener('mouseout', mouseOut)
             }
@@ -123,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
-            if (window.innerWidth <= 767) {
+            if (window.innerWidth <= 990) {
                 elementButton.removeEventListener('mouseover', mouseIn)
                 elementButton.removeEventListener('mouseout', mouseOut)
             }
@@ -157,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
-            if (window.innerWidth <= 767) {
+            if (window.innerWidth <= 990) {
                 elementButton.removeEventListener('mouseover', mouseIn)
                 elementButton.removeEventListener('mouseout', mouseOut)
             }
@@ -191,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
-            if (window.innerWidth <= 767) {
+            if (window.innerWidth <= 990) {
                 elementButton.removeEventListener('mouseover', mouseIn)
                 elementButton.removeEventListener('mouseout', mouseOut)
             }
@@ -225,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('mousemove', move)
         
         window.addEventListener('resize', function(){
-            if (window.innerWidth <= 767) {
+            if (window.innerWidth <= 990) {
                 document.removeEventListener('mousemove', move)
                 videoPortfolio.forEach(function(e) {
                     e.style.left = '0'
