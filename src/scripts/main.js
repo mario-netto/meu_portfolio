@@ -20,13 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.addEventListener('click', preventLink)
                 console.log('block')
             })
+
             showCupheadMobile() 
-            showUmsoMobile()           
+            showUmsoMobile()
+            showAppTimerMobile()
+            showArchanjoMobile()
+            showFormMobile()           
         } else {
             linkPortfolio.forEach(function(e) {
                 e.removeEventListener('click', preventLink)
                 console.log('resize block')
             })
+
             showCuphead()
             showUmso()
             showAppTimer()
@@ -325,4 +330,109 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }    
+
+    function showAppTimerMobile() {
+        const elementButton = document.querySelector('.appTimer');
+        const elementVideo = document.querySelector('.portfolio-video-appTimer');
+
+        elementButton.addEventListener('click', clickPortfolio)
+
+        function clickPortfolio() {
+            startVideo(elementVideo)
+            // Mostrar o vídeo
+            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.add('portfolio-video--show-mobile')
+            close.classList.remove('opacity-none')
+            blur.classList.add('blur--active');
+            
+            document.body.style.overflow = 'hidden'
+
+            document.addEventListener('click', closeVideo)
+        }
+
+        function closeVideo(e) {
+            // Verifica se o clique foi fora do vídeo e do botão
+            if (!elementVideo.contains(e.target) && e.target !== elementButton) {
+                // close video
+                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.remove('portfolio-video--show-mobile')
+                close.classList.add('opacity-none')
+                blur.classList.remove('blur--active')
+                document.body.style.overflow = 'auto'
+
+                // Remove o evento para não ficar sendo acionado novamente
+                document.removeEventListener('click', closeVideo)
+            }
+        }
+    }   
+
+    function showArchanjoMobile() {
+        const elementButton = document.querySelector('.archanjo');
+        const elementVideo = document.querySelector('.portfolio-video-archanjo');
+
+        elementButton.addEventListener('click', clickPortfolio)
+
+        function clickPortfolio() {
+            startVideo(elementVideo)
+            // Mostrar o vídeo
+            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.add('portfolio-video--show-mobile')
+            close.classList.remove('opacity-none')
+            blur.classList.add('blur--active');
+            
+            document.body.style.overflow = 'hidden'
+
+            document.addEventListener('click', closeVideo)
+        }
+
+        function closeVideo(e) {
+            // Verifica se o clique foi fora do vídeo e do botão
+            if (!elementVideo.contains(e.target) && e.target !== elementButton) {
+                // close video
+                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.remove('portfolio-video--show-mobile')
+                close.classList.add('opacity-none')
+                blur.classList.remove('blur--active')
+                document.body.style.overflow = 'auto'
+
+                // Remove o evento para não ficar sendo acionado novamente
+                document.removeEventListener('click', closeVideo)
+            }
+        }
+    }   
+
+    function showFormMobile() {
+        const elementButton = document.querySelector('.form');
+        const elementVideo = document.querySelector('.portfolio-video-form');
+
+        elementButton.addEventListener('click', clickPortfolio)
+
+        function clickPortfolio() {
+            startVideo(elementVideo)
+            // Mostrar o vídeo
+            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.add('portfolio-video--show-mobile')
+            close.classList.remove('opacity-none')
+            blur.classList.add('blur--active');
+            
+            document.body.style.overflow = 'hidden'
+
+            document.addEventListener('click', closeVideo)
+        }
+
+        function closeVideo(e) {
+            // Verifica se o clique foi fora do vídeo e do botão
+            if (!elementVideo.contains(e.target) && e.target !== elementButton) {
+                // close video
+                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.remove('portfolio-video--show-mobile')
+                close.classList.add('opacity-none')
+                blur.classList.remove('blur--active')
+                document.body.style.overflow = 'auto'
+
+                // Remove o evento para não ficar sendo acionado novamente
+                document.removeEventListener('click', closeVideo)
+            }
+        }
+    }   
 })
