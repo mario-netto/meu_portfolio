@@ -12,24 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     function display(){
-        if (window.innerWidth <= 767) {
+        if (window.innerWidth <= 990) {
             showCupheadMobile() 
             showUmsoMobile()
             showAppTimerMobile()
             showArchanjoMobile()
-            showFormMobile()           
-        } else if (window.innerWidth <= 990) {
+            showFormMobile()   
             linkDeployAll.forEach(element => {
-                element.classList.add('opacity-none')
+                element.classList.add('opacity-none');
+                element.style.opacity = '1'; // resolvendo bug texto visível
+                element.style.visibility = 'visible';
+                element.style.color = '#000'; 
             })
-            showCupheadMobile() 
-            showUmsoMobile()
-            showAppTimerMobile()
-            showArchanjoMobile()
-            showFormMobile()        
         } else {
             linkDeployAll.forEach(element => {
                 element.classList.remove('opacity-none')
+                element.style.color = '#ffffffbe'; 
             })
             showCuphead()
             showUmso()
@@ -377,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o clique foi fora do vídeo e do botão
             if (!elementVideo.contains(e.target) && e.target !== elementButton) {
                 // close video
-                linkDeploy.classList.add('opacity-none')
+                // linkDeploy.classList.add('opacity-none')
                 elementVideo.classList.add('opacity-none')
                 elementVideo.classList.remove('portfolio-video--show-mobile')
                 close.classList.add('opacity-none')
