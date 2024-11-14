@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.classList.add('opacity-none');
                 element.style.opacity = '1'; // resolvendo bug texto visível
                 element.style.visibility = 'visible';
-                element.style.color = '#000'; 
+                // element.style.color = '#000'; 
             })
         } else {
             linkDeployAll.forEach(element => {
                 element.classList.remove('opacity-none')
-                element.style.color = '#ffffffbe'; 
+                // element.style.color = '#ffffffbe'; 
             })
             showCuphead()
             showUmso()
