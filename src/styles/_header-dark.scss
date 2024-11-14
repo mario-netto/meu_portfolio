@@ -125,23 +125,23 @@
                 justify-content: space-between;
                 width: 100%;
 
-            &__year{ 
-                position: fixed;
-                top: 70vh;
-                left: 45vw;
-                color: #000000;
-                z-index: 3;
-                background-color: #fff;
-                border-radius: 24px;
-                padding: 12px 24px;
-                box-shadow: 0 0 16px 0px #ffffff36;
-            }
+            // &__year{ 
+            //     position: fixed;
+            //     top: 70vh;
+            //     left: 45vw;
+            //     color: #000000;
+            //     z-index: 3;
+            //     background-color: #fff;
+            //     border-radius: 24px;
+            //     padding: 12px 24px;
+            //     box-shadow: 0 0 16px 0px #ffffff36;
+            // }
                 &:hover {
                     // background-color: transparent;
-                    border-radius: 24px;
-                    box-shadow: 0 0 16px 0px #ffffff2a;
-                    box-shadow: none;
-                    transform: none;
+                    // border-radius: 24px;
+                    // box-shadow: 0 0 16px 0px #ffffff2a;
+                    // box-shadow: none;
+                    // transform: none;
 
                     .text {
                         pointer-events: none;
@@ -160,23 +160,24 @@
         
         &__menu {
             &__item {
-                &__year {
-                    position: fixed;
-                    top: 60vh;
-                    left: 45vw;
-                    color: #000000;
-                    z-index: 3;
-                    background-color: #fff;
-                    border-radius: 24px;
-                    padding: 12px 24px;
-                    box-shadow: 0 0 16px 0px #ffffff36;
-                }
+                // &__year {
+                //     position: fixed;
+                //     top: 60vh;
+                //     left: 45vw;
+                //     color: #000000;
+                //     z-index: 3;
+                //     background-color: #fff;
+                //     border-radius: 24px;
+                //     padding: 12px 24px;
+                //     box-shadow: 0 0 16px 0px #ffffff36;
+                // }
+                
                 &:hover {
                     // background-color: transparent;
-                    border-radius: 24px;
-                    box-shadow: 0 0 16px 0px #ffffff2a;
-                    box-shadow: none;
-                    transform: none;
+                    // border-radius: 24px;
+                    // box-shadow: 0 0 16px 0px #ffffff2a;
+                    // box-shadow: none;
+                    // transform: none;
 
                     .text {
                         pointer-events: none;
