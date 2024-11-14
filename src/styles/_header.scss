@@ -127,6 +127,35 @@
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
+
+                &:hover {
+                    background-color: transparent;
+                    border-radius: 0;
+                    box-shadow: none;
+                    transform: none;
+
+                    .text {
+                        color: variables.$textBlack;
+                    }
+                }
+            }
+
+            .link-deploy {
+                position: fixed;
+                top: 70vh;
+                left: 45vw;
+                color: #fff;
+                z-index: 3;
+                background-color: #000;
+                border-radius: 24px;
+                padding: 12px 24px;
+                box-shadow: 0 0 16px 0px #0000005b;
+
+                &:hover {
+                    color: #fff;
+                    border-radius: 30px;
+                    transform: scale(1);
+                }
             }
         }
     }
@@ -147,6 +176,24 @@
                     .text {
                         color: variables.$textBlack;
                     }
+                }
+            }
+
+            .link-deploy {
+                position: fixed;
+                top: 77vh;
+                left: 45vw;
+                color: #fff;
+                z-index: 3;
+                background-color: #000;
+                border-radius: 24px;
+                padding: 12px 24px;
+                box-shadow: 0 0 16px 0px #0000005b;
+
+                &:hover {
+                    color: #fff;
+                    border-radius: 30px;
+                    transform: scale(1);
                 }
             }
         }
