@@ -20,7 +20,19 @@
             width: 300px;
             transition: transform 0.2s ease;
             cursor: pointer;
+            
+            &__year {
+                text-align: right;
+                pointer-events: auto;
+                transition: transform 0.2s ease;
 
+                &:hover{
+                    border-radius: 30%;
+                    transform: scale(1.5);
+                    color: #000;
+                }
+            }
+            
             //hover button portfolio
             &:hover {
                 background-color: #fafafa;
@@ -31,25 +43,6 @@
                 .text {
                     color: #000;
                 }
-            }
-
-            .text {
-                pointer-events: none; //aceitar click no js
-            }
-
-            .link-deploy {
-                pointer-events: auto;
-                transition: transform 0.2s ease;
-
-                &:hover{
-                    border-radius: 30%;
-                    transform: scale(1.5);
-                    color: #000;
-                }
-            }
-
-            &__year {
-                text-align: right;
             }
         }
 
@@ -132,19 +125,7 @@
                 justify-content: space-between;
                 width: 100%;
 
-                &:hover {
-                    background-color: transparent;
-                    border-radius: 0;
-                    box-shadow: none;
-                    transform: none;
-
-                    .text {
-                        color: variables-dark.$textWhite;
-                    }
-                }
-            }
-
-            .link-deploy {
+            &__year{ 
                 position: fixed;
                 top: 70vh;
                 left: 45vw;
@@ -154,13 +135,20 @@
                 border-radius: 24px;
                 padding: 12px 24px;
                 box-shadow: 0 0 16px 0px #ffffff36;
-
+            }
                 &:hover {
-                    color: #000;
-                    border-radius: 30px;
-                    transform: scale(1);
+                    // background-color: transparent;
+                    border-radius: 0;
+                    box-shadow: none;
+                    transform: none;
+
+                    .text {
+                        pointer-events: none;
+                        // color: variables-dark.$textWhite;
+                    }
                 }
             }
+
         }
     }
 
@@ -171,34 +159,27 @@
         
         &__menu {
             &__item {
+                &__year {
+                    position: fixed;
+                    top: 60vh;
+                    left: 45vw;
+                    color: #000000;
+                    z-index: 3;
+                    background-color: #fff;
+                    border-radius: 24px;
+                    padding: 12px 24px;
+                    box-shadow: 0 0 16px 0px #ffffff36;
+                }
                 &:hover {
-                    background-color: transparent;
+                    // background-color: transparent;
                     border-radius: 0;
                     box-shadow: none;
                     transform: none;
 
                     .text {
-                        color: variables-dark.$textWhite;
-                        
+                        pointer-events: none;
+                        // color: variables-dark.$textWhite;
                     }
-                }
-            }
-
-            .link-deploy {
-                position: fixed;
-                top: 70vh;
-                left: 45vw;
-                color: #000000;
-                z-index: 3;
-                background-color: #fff;
-                border-radius: 24px;
-                padding: 12px 24px;
-                box-shadow: 0 0 16px 0px #ffffff10;
-
-                &:hover {
-                    color: #000;
-                    border-radius: 30px;
-                    transform: scale(1);
                 }
             }
         }

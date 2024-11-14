@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o clique foi fora do vídeo e do botão
             if (!elementVideo.contains(e.target) && e.target !== elementButton) {
                 // close video
-                // linkDeploy.classList.add('opacity-none')
+                linkDeploy.classList.add('opacity-none')
                 elementVideo.classList.add('opacity-none')
                 elementVideo.classList.remove('portfolio-video--show-mobile')
                 close.classList.add('opacity-none')
