@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showCupheadMobile() {
         const elementButton = document.querySelector('.cuphead')
         const elementVideo = document.querySelector('.portfolio-video-cuphead')
-        const linkDeploy = document.querySelector('.link-deploy-cuphead')
+        const linkDeploy = document.querySelector('.deploy-mobile-cuphead')
 
         elementButton.addEventListener('click', clickPortfolio)
 
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showUmsoMobile() {
         const elementButton = document.querySelector('.umso')
         const elementVideo = document.querySelector('.portfolio-video-umso')
-        const linkDeploy = document.querySelector('.link-deploy-umso')
+        const linkDeploy = document.querySelector('.deploy-mobile-umso')
 
         elementButton.addEventListener('click', clickPortfolio)
 
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showAppTimerMobile() {
         const elementButton = document.querySelector('.appTimer')
         const elementVideo = document.querySelector('.portfolio-video-appTimer')
-        const linkDeploy = document.querySelector('.link-deploy-AppTimer')
+        const linkDeploy = document.querySelector('.deploy-mobile-appTimer')
 
         elementButton.addEventListener('click', clickPortfolio)
 
@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showArchanjoMobile() {
         const elementButton = document.querySelector('.archanjo')
         const elementVideo = document.querySelector('.portfolio-video-archanjo')
-        const linkDeploy = document.querySelector('.link-deploy-archanjo')
+        const linkDeploy = document.querySelector('.deploy-mobile-archanjo')
 
         elementButton.addEventListener('click', clickPortfolio)
 
@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showFormMobile() {
         const elementButton = document.querySelector('.form')
         const elementVideo = document.querySelector('.portfolio-video-form')
-        const linkDeploy = document.querySelector('.link-deploy-form')
+        const linkDeploy = document.querySelector('.deploy-mobile-form')
 
         elementButton.addEventListener('click', clickPortfolio)
 
