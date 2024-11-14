@@ -19,16 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
             showArchanjoMobile()
             showFormMobile()   
             linkDeployAll.forEach(element => {
-                element.classList.add('opacity-none');
-                element.style.opacity = '1'; // resolvendo bug texto visível
-                element.style.visibility = 'visible';
-                // element.style.color = '#000'; 
+                element.classList.add('opacity-none')
+                element.style.opacity = '1' // resolvendo bug texto visível
+                element.style.visibility = 'visible'
+                // element.style.color = '#000' 
             })
         } else {
             linkDeployAll.forEach(element => {
                 element.classList.remove('opacity-none')
-                // element.style.color = '#ffffffbe'; 
+                // element.style.color = '#ffffffbe' 
             })
+            moveImage()
             showCuphead()
             showUmso()
             showAppTimer()
@@ -240,6 +241,29 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         }
     }
+
+    function moveImage() {
+        const perfil = document.querySelector('.header__about__image-bg')
+        
+        document.addEventListener('mousemove', move)
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 990) {
+                document.removeEventListener('mousemove', move)
+            }
+        })
+
+        function move(e) {
+            const mouseX = e.pageX
+            const mouseY = e.pageY
+            
+            const rotation = mouseX / 150
+            const zoom = 1 + (mouseY / window.innerHeight) * 0.1 + 0.1
+
+            perfil.style.transform = `rotate(${rotation}deg) scale(${zoom})`
+        }
+    }
+
 
     //-------------------------------------------------------------
 
