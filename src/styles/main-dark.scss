@@ -127,7 +127,7 @@ body {
 .deploy-mobile {
     position: fixed;
     top: 65vh;
-    left: 40vw;
+    left: 38vw;
     color: #000000;
     z-index: 3;
     background-color: #fff;
@@ -137,6 +137,7 @@ body {
 
     @media (min-width: 768px) and (max-width: 990px) {
         top: 58vh;
+        left: 45vw;
     }
 }
 
