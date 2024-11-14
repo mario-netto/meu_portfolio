@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
- 
 //-----------------------tema----------------------------------------------------
 
 
@@ -49,16 +48,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function showCuphead () {
         const elementButton = document.querySelector('.cuphead')
         const elementVideo = document.querySelector('.portfolio-video-cuphead')
-        
-        elementButton.addEventListener('mouseover', mouseIn)
-        elementButton.addEventListener('mouseout', mouseOut)
-        window.addEventListener('resize', function(){
-            if (window.innerWidth <= 990) {
-                elementButton.removeEventListener('mouseover', mouseIn)
-                elementButton.removeEventListener('mouseout', mouseOut)
+
+        elementButton.removeEventListener('click', function() {
+            if (!linkOpen) { // Verifica se o link ainda não foi aberto
+                linkOpen = true // Define como true para impedir cliques adicionais
+                window.open('https://cuphead-pearl.vercel.app/', '_blank')
+                
+                setTimeout(function() {
+                    linkOpen = false // Reseta a flag após, por exemplo, 1 segundo
+                }, 1000)
             }
         })
 
+        elementButton.addEventListener('mouseover', mouseIn)
+        elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
             if (window.innerWidth <= 990) {
                 elementButton.removeEventListener('mouseover', mouseIn)
@@ -90,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showUmso () {
         const elementButton = document.querySelector('.umso')
         const elementVideo = document.querySelector('.portfolio-video-umso')
-        
+
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
@@ -124,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showAppTimer () {
         const elementButton = document.querySelector('.appTimer')
         const elementVideo = document.querySelector('.portfolio-video-appTimer')
-        
+
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
@@ -158,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showArchanjo () {
         const elementButton = document.querySelector('.archanjo')
         const elementVideo = document.querySelector('.portfolio-video-archanjo')
-        
+
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
@@ -192,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showForm () {
         const elementButton = document.querySelector('.form')
         const elementVideo = document.querySelector('.portfolio-video-form')
-        
+
         elementButton.addEventListener('mouseover', mouseIn)
         elementButton.addEventListener('mouseout', mouseOut)
         window.addEventListener('resize', function(){
@@ -254,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function startVideo(video) {
         video.currentTime = 0
-        // video.play();
+        // video.play()
     }
 
     function preventLink(e) {
@@ -266,19 +269,25 @@ document.addEventListener('DOMContentLoaded', function() {
      // mobile -------------------------------------------------------
 
     function showCupheadMobile() {
-        const elementButton = document.querySelector('.cuphead');
-        const elementVideo = document.querySelector('.portfolio-video-cuphead');
+        const elementButton = document.querySelector('.cuphead')
+        const elementVideo = document.querySelector('.portfolio-video-cuphead')
 
         elementButton.addEventListener('click', clickPortfolio)
+
+        window.addEventListener('resize', function(){
+            if (window.innerWidth >= 990) {
+                elementButton.removeEventListener('click', clickPortfolio)  
+            }
+        })
 
         function clickPortfolio() {
             console.log('click ok')
             startVideo(elementVideo)
             // Mostrar o vídeo
-            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.remove('opacity-none')
             elementVideo.classList.add('portfolio-video--show-mobile')
             close.classList.remove('opacity-none')
-            blur.classList.add('blur--active');
+            blur.classList.add('blur--active')
             
             document.body.style.overflow = 'hidden'
 
@@ -289,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o clique foi fora do vídeo e do botão
             if (!elementVideo.contains(e.target) && e.target !== elementButton) {
                 // close video
-                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.add('opacity-none')
                 elementVideo.classList.remove('portfolio-video--show-mobile')
                 close.classList.add('opacity-none')
                 blur.classList.remove('blur--active')
@@ -302,18 +311,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }   
     
     function showUmsoMobile() {
-        const elementButton = document.querySelector('.umso');
-        const elementVideo = document.querySelector('.portfolio-video-umso');
+        const elementButton = document.querySelector('.umso')
+        const elementVideo = document.querySelector('.portfolio-video-umso')
 
         elementButton.addEventListener('click', clickPortfolio)
+        
+        window.addEventListener('resize', function(){
+            if (window.innerWidth >= 990) {
+                elementButton.removeEventListener('click', clickPortfolio)  
+            }
+        })
 
         function clickPortfolio() {
             startVideo(elementVideo)
             // Mostrar o vídeo
-            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.remove('opacity-none')
             elementVideo.classList.add('portfolio-video--show-mobile')
             close.classList.remove('opacity-none')
-            blur.classList.add('blur--active');
+            blur.classList.add('blur--active')
             
             document.body.style.overflow = 'hidden'
 
@@ -324,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o clique foi fora do vídeo e do botão
             if (!elementVideo.contains(e.target) && e.target !== elementButton) {
                 // close video
-                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.add('opacity-none')
                 elementVideo.classList.remove('portfolio-video--show-mobile')
                 close.classList.add('opacity-none')
                 blur.classList.remove('blur--active')
@@ -337,18 +352,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }    
 
     function showAppTimerMobile() {
-        const elementButton = document.querySelector('.appTimer');
-        const elementVideo = document.querySelector('.portfolio-video-appTimer');
+        const elementButton = document.querySelector('.appTimer')
+        const elementVideo = document.querySelector('.portfolio-video-appTimer')
 
         elementButton.addEventListener('click', clickPortfolio)
+
+        window.addEventListener('resize', function(){
+            if (window.innerWidth >= 990) {
+                elementButton.removeEventListener('click', clickPortfolio)  
+            }
+        })
 
         function clickPortfolio() {
             startVideo(elementVideo)
             // Mostrar o vídeo
-            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.remove('opacity-none')
             elementVideo.classList.add('portfolio-video--show-mobile')
             close.classList.remove('opacity-none')
-            blur.classList.add('blur--active');
+            blur.classList.add('blur--active')
             
             document.body.style.overflow = 'hidden'
 
@@ -359,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o clique foi fora do vídeo e do botão
             if (!elementVideo.contains(e.target) && e.target !== elementButton) {
                 // close video
-                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.add('opacity-none')
                 elementVideo.classList.remove('portfolio-video--show-mobile')
                 close.classList.add('opacity-none')
                 blur.classList.remove('blur--active')
@@ -372,18 +393,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }   
 
     function showArchanjoMobile() {
-        const elementButton = document.querySelector('.archanjo');
-        const elementVideo = document.querySelector('.portfolio-video-archanjo');
+        const elementButton = document.querySelector('.archanjo')
+        const elementVideo = document.querySelector('.portfolio-video-archanjo')
 
         elementButton.addEventListener('click', clickPortfolio)
+
+        window.addEventListener('resize', function(){
+            if (window.innerWidth >= 990) {
+                elementButton.removeEventListener('click', clickPortfolio)  
+            }
+        })
 
         function clickPortfolio() {
             startVideo(elementVideo)
             // Mostrar o vídeo
-            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.remove('opacity-none')
             elementVideo.classList.add('portfolio-video--show-mobile')
             close.classList.remove('opacity-none')
-            blur.classList.add('blur--active');
+            blur.classList.add('blur--active')
             
             document.body.style.overflow = 'hidden'
 
@@ -394,7 +421,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o clique foi fora do vídeo e do botão
             if (!elementVideo.contains(e.target) && e.target !== elementButton) {
                 // close video
-                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.add('opacity-none')
                 elementVideo.classList.remove('portfolio-video--show-mobile')
                 close.classList.add('opacity-none')
                 blur.classList.remove('blur--active')
@@ -407,18 +434,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }   
 
     function showFormMobile() {
-        const elementButton = document.querySelector('.form');
-        const elementVideo = document.querySelector('.portfolio-video-form');
+        const elementButton = document.querySelector('.form')
+        const elementVideo = document.querySelector('.portfolio-video-form')
 
         elementButton.addEventListener('click', clickPortfolio)
+
+        window.addEventListener('resize', function(){
+            if (window.innerWidth >= 990) {
+                elementButton.removeEventListener('click', clickPortfolio)  
+            }
+        })
 
         function clickPortfolio() {
             startVideo(elementVideo)
             // Mostrar o vídeo
-            elementVideo.classList.remove('opacity-none');
+            elementVideo.classList.remove('opacity-none')
             elementVideo.classList.add('portfolio-video--show-mobile')
             close.classList.remove('opacity-none')
-            blur.classList.add('blur--active');
+            blur.classList.add('blur--active')
             
             document.body.style.overflow = 'hidden'
 
@@ -429,7 +462,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o clique foi fora do vídeo e do botão
             if (!elementVideo.contains(e.target) && e.target !== elementButton) {
                 // close video
-                elementVideo.classList.add('opacity-none');
+                elementVideo.classList.add('opacity-none')
                 elementVideo.classList.remove('portfolio-video--show-mobile')
                 close.classList.add('opacity-none')
                 blur.classList.remove('blur--active')

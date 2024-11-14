@@ -21,10 +21,6 @@
             transition: transform 0.2s ease;
             cursor: pointer;
 
-            .text {
-                pointer-events: none; //aceitar click no js
-            }
-
             //hover button portfolio
             &:hover {
                 background-color: #fafafa;
@@ -34,6 +30,20 @@
 
                 .text {
                     color: #000;
+                }
+            }
+
+            .text {
+                pointer-events: none; //aceitar click no js
+            }
+
+            .link-deploy {
+                pointer-events: auto;
+                transition: transform 0.2s ease;
+
+                &:hover{
+                    border-radius: 30%;
+                    transform: scale(1.5);
                 }
             }
 
